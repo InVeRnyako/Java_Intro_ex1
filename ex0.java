@@ -4,8 +4,7 @@
 
 // Параметры для фильтрации: 
 // {"name":"Ivanov", "country":"Russia", "city":"Moscow", "age":"null"}
-// Стандартный формат запроса (из гугла):
-// SELECT column1, column2 FROM table1, table2 WHERE column2='value';
+
 import java.util.Scanner;
 
 public class ex0 {
@@ -15,7 +14,7 @@ public class ex0 {
         request.append("SELECT * FROM students WHERE ");
         String prefix = "";
         for (int i = 0; i < params.length; i++) {
-            if (!params[i][1].toLowerCase().equals("null")) {
+            if (!params[i][1].toLowerCase().equals("null") && !params[i][1].equals(null)) {
                 request.append(prefix);
                 prefix = " AND ";
                 request.append(params[i][0]);
